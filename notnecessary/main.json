@@ -1,0 +1,28 @@
+{
+    "data": {
+        "Web Development": {
+            "sort_id": "1",
+            "is_latest": true,
+            "ReleaseDate": "Fri Nov 8, 2024",
+            "Description": "This is the first day of the web development course. More details are included in the release notes",
+            "icon": "bx bxl-windows",
+            "url": "./web-development.html"
+        },
+        "Backend Development": {
+            "sort_id": "2",
+            "is_latest": true,
+            "ReleaseDate": "Fri Nov 15, 2024",
+            "Description": "This is the second day of the backend development course. More details are included in the release notes",
+            "icon": "bx bx-code-alt",
+            "url": "./backend-development.html"
+        },
+        "Mobile Development": {
+            "sort_id": "3",
+            "is_latest": false,
+            "ReleaseDate": "Fri Nov 22, 2024",
+            "Description": "This is the third day of the mobile development course. More details are included in the release notes",
+            "icon": "bx bxl-android",
+            "url": "./mobile-development.html"
+        }
+    }
+}

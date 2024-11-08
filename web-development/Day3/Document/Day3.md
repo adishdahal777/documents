@@ -220,8 +220,8 @@ Create a new file name **formTable.html**
 
 Task#1
 
-![image.png](Day%203%20138960ad71f38083b787c9af7937ea1b/image.png)
+![image.png](../Task/Task1.png)
 
 #Task2
 
-![image.png](Day%203%20138960ad71f38083b787c9af7937ea1b/image%201.png)
+![image.png](../Task/Task2.png)

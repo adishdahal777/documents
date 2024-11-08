@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+
+    <style>
+        .prose {
+            max-width: max-content !important;
+        }
+    </style>
+
+</head>
+
+<body class=" bg-gray-100 text-gray-800">
+
+
+
+    <div class="flex justify-center my-10">
+        <div class=" p-6 bg-white shadow-md rounded-lg w-[50%]">
+            <a href="../../../web-development.html"
+                class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Go
+                Back</a>
+            <div id="content" class="prose w-full mt-10"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moo/moo.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/json-loose/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/attributes-parser/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-code-preview/dist/index.umd.min.js"></script>
+    <script>
+        async function loadMarkdownFile(filePath) {
+            try {
+                // Fetch the Markdown file
+                const response = await fetch(filePath);
+                const markdown = await response.text();
+                console.log(markdown);
+                // Convert Markdown to HTML using Marked.js
+                const htmlContent = new marked.Marked()
+                    .use(markedCodePreview())
+                    .parse(markdown);
+
+                // Insert the HTML into the content div
+                document.getElementById("content").innerHTML = htmlContent;
+            } catch (error) {
+                console.error("Error loading Markdown file:", error);
+                document.getElementById("content").innerHTML = "<p class='text-red-500'>Failed to load the Markdown file.</p>";
+            }
+        }
+
+        // Load a specific Markdown file (e.g., Day1.md) when the page loads
+        loadMarkdownFile('Day2.md');
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+{
+    "Backend Development": {
+        "Laravel": {
+            "sort_id": "1",
+            "icon": "bx bxl-php",
+            "is_latest": true,
+            "ReleaseDate": "Fri Nov 8, 2024",
+            "Description": "This is the first day of the web development course. More details are included in the release notes",
+            "CRUD Operation": {
+                "icon": "bx bxl-php",
+                "is_latest": false,
+                "ReleaseDate": "Fri Nov 8, 2024",
+                "Description": "We will be learning how to create a CRUD operation using Laravel",
+                "Code": [],
+                "Document": [
+                    {
+                        "image": false,
+                        "code": false,
+                        "url": "./backend-development/Laravel/crud-operation/Documentation/CRUD-Preview.html",
+                        "name": "Documentation on CRUD operation",
+                        "icon": "bx bxs-file"
+                    }
+                ],
+                "Task": []
+            }
+        },
+        "Java": {
+            "sort_id": "2",
+            "icon": "bx bxl-java",
+            "is_latest": false,
+            "ReleaseDate": "Not Released",
+            "Description": "",
+            "CRUD Operation": []
+        },
+        "Node.js": {
+            "sort_id": "3",
+            "icon": "bx bxl-nodejs",
+            "is_latest": false,
+            "ReleaseDate": "Not Released",
+            "Description": "",
+            "CRUD Operation": []
+        },
+        "Python": {
+            "sort_id": "4",
+            "icon": "bx bxl-python",
+            "is_latest": false,
+            "ReleaseDate": "Not Released",
+            "Description": "",
+            "CRUD Operation": []
+        }
+    }
+}

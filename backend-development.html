@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step By Step Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css" />
+
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="flex justify-center flex-col items-center">
+
+        <main class=" max-w-6xl w-full p-12 m-10 mb-0 bg-white shadow-md rounded-lg">
+            <h1 class="text-3xl font-bold">Backend Development Training Documentation</h1>
+            <p class="mt-2 mb-5">Step-by-step guide and code for each day</p>
+            <a href="./index.html" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Go
+                Back</a>
+        </main>
+
+
+        <main class=" max-w-6xl w-full p-12 m-10 bg-white shadow-lg rounded-lg">
+
+            <ol class="relative border-s border-gray-200 dark:border-gray-700">
+
+            </ol>
+        </main>
+
+
+        <main class=" max-w-6xl w-full p-12 m-10 mt-0 bg-white shadow-md rounded-lg">
+            <p>&copy; <b>
+                    Adish Dahal
+                </b>
+                <span id="year"></span> Training Documentation
+            </p>
+        </main>
+
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+
+            // Fetch the JSON data
+            $.getJSON('./notnecessary/backend-development.json', function (data) {
+                const mainContainer = $('main .relative');
+
+
+                // Loop through each day in the "Web Development" section
+                $.each(data['Backend Development'], function (key, day) {
+                    // Create the main day list item
+                    console.log(day);
+                    const dayHTML = `
+                    <li class="mb-10 ms-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                            <i class='${day.icon}'></i>
+                        </span>
+                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">${key} 
+                            ${day.is_latest ? `<span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Latest</span>` : ''}
+                        </h3>
+                        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">${day.ReleaseDate}</time>
+                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">${day.Description}</p>
+                        <div class="mb-4 ml-10">
+                            ${renderMainSections(day, 'CRUD Operation')}
+                        </div>
+                    </li>
+                `;
+
+                    mainContainer.append(dayHTML);
+                });
+
+
+                function renderMainSections(day, sectionName) {
+                    if (!day[sectionName] || day[sectionName].length === 0) return '';
+                    data = day[sectionName];
+                    const dayHTML = `
+                          <ol class="relative border-s border-gray-200 dark:border-gray-700">
+                    <li class="mb-10 ms-6">
+                        <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                            <i class='${data.icon}'></i>
+                        </span>
+                        <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">${sectionName} 
+                            ${data.is_latest ? `<span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">Latest</span>` : ''}
+                        </h3>
+                        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">${data.ReleaseDate}</time>
+                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">${data.Description}</p>
+                        <div class="mb-4 ml-10">
+                            ${renderSections(day[sectionName], 'Code')}
+                            ${renderSections(day[sectionName], 'Document')}
+                            ${renderSections(day[sectionName], 'Task')}
+                        </div>
+                    </li>
+                    </ol>
+                `;
+
+                    return dayHTML;
+                }
+
+
+
+                function renderSections(day, sectionName) {
+                    if (!day[sectionName] || day[sectionName].length === 0) return '';
+
+                    let sectionHTML = `
+                    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+                        <li class="mb-5 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                                <i class='bx bx-folder'></i>
+                            </span>
+                            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">${sectionName}</h3>
+                            <div class="mt-4 ml-5">
+                                <ol class="relative border-s border-gray-200 dark:border-gray-700 space-y-1">
+                                    ${day[sectionName].map(item => `
+                                        <li class=" ms-6">
+                                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                                                <i class='${item.icon}'></i>
+                                            </span>
+                                                <a href="${item.url}" ${item.image ? `data-lightbox='${sectionName}' data-title='${item.name}'` : ""} class="flex items-center mb-1 text-lg font-light text-gray-900 dark:text-white">
+                                                        ${item.name}
+                                                </a>
+                                        </li >
+                                   `).join('')}
+                                </ol>
+                            </div>
+                        </li>
+                    </ol>
+                `;
+
+                    return sectionHTML;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
