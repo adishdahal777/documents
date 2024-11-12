@@ -73,7 +73,7 @@
         },
         "Day3": {
             "sort_id": "3",
-            "is_latest": true,
+            "is_latest": false,
             "ReleaseDate": "Fri Nov 22, 2024",
             "Description": "This is the third day of the web development course. More details are included in the release notes",
             "Code": [
@@ -115,6 +115,21 @@
                     "url": "./web-development/Day3/Task/Task2.png",
                     "name": "Task#2.png",
                     "icon": "bx bx-image"
+                }
+            ]
+        },
+        "Day4": {
+            "sort_id": "4",
+            "is_latest": true,
+            "ReleaseDate": "Tuesday Nov 12, 2024",
+            "Description": "This is the fourth day of the web development course. More details are included in the release notes",
+            "Code": [
+                {
+                    "image": false,
+                    "code": true,
+                    "url": "./web-development/Day4/Code/index.html",
+                    "name": "index.html",
+                    "icon": "bx bxl-html5"
                 }
             ]
         }
