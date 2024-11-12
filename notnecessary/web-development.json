@@ -131,7 +131,9 @@
                     "name": "index.html",
                     "icon": "bx bxl-html5"
                 }
-            ]
+            ],
+            "Document": [],
+            "Task": []
         }
     }
 }
