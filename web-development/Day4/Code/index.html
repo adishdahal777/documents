@@ -63,7 +63,8 @@
         }
 
         .listing>div>h2,
-        .table_container>h2 {
+        .table_container>h2,
+        .form_style>h2 {
             background-color: blueviolet;
             color: white;
             padding: 5px;
@@ -93,6 +94,67 @@
             background-color: lightblue;
             color: white;
             font-size: 26px;
+        }
+
+
+        /* Form Style */
+
+        .form_style>form>div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form_style>form>div>label {
+            margin-bottom: 5px;
+            color: gray;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .form_style>form>div>input {
+            padding: 8px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 18px;
+        }
+
+        .form_style>form>div>small {
+            color: red;
+            display: none;
+        }
+
+        .form_style>form>div>input:focus {
+            outline: 1px solid green;
+        }
+
+        .form_style>form>div>textarea {
+            padding: 8px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 18px;
+            height: 100px;
+        }
+
+        .form_style>form>button {
+            padding: 8px;
+            width: 100%;
+            background-color: green;
+            color: white;
+            border: 1px solid green;
+            cursor: pointer;
+            /* for animation */
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* While hovering on the button */
+        .form_style>form>button:hover {
+            background-color: white;
+            color: green;
+            border: 1px solid green;
         }
     </style>
 </head>
@@ -180,6 +242,45 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+
+        <div class="form_style">
+            <h2>Form Style</h2>
+
+            <form action="">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                    <small>Your name is required</small>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <small>Your email is required</small>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    <small>Your phone is required</small>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                    <small>Your password is required</small>
+                </div>
+                <div>
+                    <label for="Address">Address</label>
+                    <input id="Address" name="Address" placeholder="Enter your address">
+                    <small>Your address is required</small>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+                    <small>Your message is required</small>
+                </div>
+                <button>Submit</button>
+            </form>
         </div>
 
     </main>

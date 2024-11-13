@@ -132,8 +132,45 @@
                     "icon": "bx bxl-html5"
                 }
             ],
-            "Document": [],
-            "Task": []
+            "Document": [
+                {
+                    "image": false,
+                    "code": false,
+                    "url": "./web-development/Day4/Document/Day4Preview.html",
+                    "name": "Day Four Docs",
+                    "icon": "bx bx-file"
+                }
+            ],
+            "Task": [
+                {
+                    "image": true,
+                    "code": false,
+                    "url": "./web-development/Day4/Task/Task1.png",
+                    "name": "Task#1.png",
+                    "icon": "bx bx-image"
+                },
+                {
+                    "image": true,
+                    "code": false,
+                    "url": "./web-development/Day4/Task/Task2.jpg",
+                    "name": "Task#2.png",
+                    "icon": "bx bx-image"
+                },
+                {
+                    "image": true,
+                    "code": false,
+                    "url": "./web-development/Day4/Task/Task3.jpg",
+                    "name": "Task#1.png",
+                    "icon": "bx bx-image"
+                },
+                {
+                    "image": true,
+                    "code": false,
+                    "url": "./web-development/Day4/Task/Task4.jpg",
+                    "name": "Task#2.png",
+                    "icon": "bx bx-image"
+                }
+            ]
         }
     }
 }
